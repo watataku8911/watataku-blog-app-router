@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .webkit-line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .animate-open {
+    transition: all 0.5s ease;
+    animation-name: open;
+    animation-duration: 1s;
+  }
+
+  @keyframes open {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* マークダウン */
+.markdown h1 {
+  @apply text-3xl mb-5 mt-4 font-bold border-b dark:text-white dark:border-gray-200;
+}
+
+.markdown h2 {
+  @apply text-2xl mb-5 mt-4 font-bold border-b dark:text-white dark:border-gray-200;
+}
+
+.markdown h3 {
+  @apply text-xl mb-5 mt-4 font-bold border-b dark:text-white;
+}
+
+.markdown h4 {
+  @apply text-lg mb-4 mt-3 font-bold border-b dark:text-white;
+}
+
+.markdown h5 {
+  @apply text-base mb-3 mt-2 font-bold border-b dark:text-white;
+}
+
+/* ソースコード */
+.markdown pre code {
+  @apply text-base text-gray-300 bg-gray-900 not-italic overflow-auto p-3 my-3;
+}
+
+/* 強調コード */
+.markdown code {
+  @apply text-xs p-1 m-1 rounded-md bg-gray-200 text-pink-600;
+}
+
+.markdown a {
+  @apply inline-block text-base break-all mb-3 h-6 leading-relaxed tracking-wider text-blue-600 border-b-blue-600 dark:border-[#ff36ab] dark:text-[#ff36ab] hover:border-b;
+}
+.markdown p {
+  @apply text-base break-all tracking-wider leading-relaxed dark:text-white;
+}
+
+.markdown ul {
+  @apply pl-8 py-3;
+}
+
+.markdown ul li {
+  @apply text-base list-disc tracking-wider leading-relaxed dark:text-white;
+}
+
+.markdown ol {
+  @apply pl-8 py-3;
+}
+
+.markdown ol li {
+  @apply text-base list-decimal tracking-wider leading-relaxed dark:text-white;
+}
+
+.markdown img {
+  @apply max-w-full;
+}
+
+.markdown blockquote {
+  @apply border-l-4 pl-5 tbpc:pl-3 tbpc:ml-1 text-gray-500 border-gray-500 dark:border-gray-300 dark:text-gray-300;
+}
+
+.markdown iframe {
+  @apply w-full;
+}
