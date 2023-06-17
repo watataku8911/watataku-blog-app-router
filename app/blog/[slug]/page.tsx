@@ -44,10 +44,10 @@ export async function generateMetadata({
     openGraph: {
       title: blog.title,
       description: blog.body,
-      url: "https://next.js13-blog-pearl.vercel.app//blog/" + blog.id,
+      url: "https://watataku-blog-app-router.vercel.app/api/blog/" + blog.id,
       siteName: blog.title,
       type: "article",
-      images: `https://next13-blog-pearl.vercel.app/api/og?title=${
+      images: `https://watataku-blog-app-router.vercel.app/api/og?title=${
         blog.title
       }&postDate=${datePlasticSurgery(blog.publishedAt)}投稿`,
     },
@@ -55,7 +55,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: blog.title,
       description: blog.body,
-      images: `https://next13-blog-pearl.vercel.app/api/og?title=${
+      images: `https://watataku-blog-app-router.vercel.app/api/og?title=${
         blog.title
       }&postDate=${datePlasticSurgery(blog.publishedAt)}投稿`,
     },
